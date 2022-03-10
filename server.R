@@ -180,7 +180,7 @@ function(input, output, session) {
                         }
                         names(tab) = c("", "Party", " ", "Seats", "  ", "Votes<sup>1</sup>", "   ")
                         
-                        cap = paste0("<sup>1</sup> First preference votes.", ifelse(input$hor_year==2010, "</br><sup>2</sup> Greens MP Adam Bandt and independent MPs Andrew Wilkie, Rob Oakeshott and Tony Windsor declared their support for Labor on confidence and supply. This gave the required 76 seats to form a majority government.", ""))
+                        cap = paste0("<sup>1</sup> First preference votes.", ifelse(input$hor_year==2010, "<br><sup>2</sup> Greens MP Adam Bandt and independent MPs Andrew Wilkie, Rob Oakeshott and Tony Windsor declared their support for Labor on confidence and supply. This gave the required 76 seats to form a majority government.", ""))
                         
                         tab_out = knitr::kable(tab, format = "html", escape = FALSE, align = c("l", "l", "c", "r", "r", "r", "r")) %>%
                           kableExtra::column_spec(c(1, 2, 3), bold = TRUE) 
