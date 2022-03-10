@@ -702,7 +702,7 @@ function(input, output, session) {
       shiny::fluidRow(shiny::h4(shiny::code("Age", style = "color: #152238")),
                       shiny::column(width = 3,
                                     shiny::tags$p(shiny::HTML(paste0("The left boxplot shows the median age across all the electorates. Each dark point in the boxplots represent where <strong>", click$id, "</strong> sits relative to the other electorates.")), style = "text-align: justify;"),
-                                    shiny::tags$p(shiny::HTML(paste0("The pie chart shows the breakdown of the population into discrete age groups and how this compares to other electorates..")), style = "text-align: justify;"),
+                                    shiny::tags$p(shiny::HTML(paste0("The right boxplot shows the breakdown of the population into discrete age groups and how this compares to other electorates.")), style = "text-align: justify;"),
                       ),
                       shiny::column(width = 2, offset = 1,
                                     plotly::plotlyOutput("demo_age", height = "400px")
