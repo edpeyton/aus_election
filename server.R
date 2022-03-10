@@ -965,7 +965,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%"))
     )
   
   
@@ -1060,7 +1060,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%"))
     )
     
     
@@ -1181,7 +1181,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%", rangemode = "tozero"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%", rangemode = "tozero"))
     )
     
     
@@ -1240,7 +1240,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%"))
     )
     
     
@@ -1305,7 +1305,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%"))
     )
     
     
@@ -1368,7 +1368,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%"))
     )
     
     
@@ -1433,7 +1433,7 @@ function(input, output, session) {
                             hovertext = paste0("<br><b>Electorate: </b>", data2$DivisionNm, "</b><br>", "<b>Proportion: </b>", scales::percent(data2$VALUE, 0.01), "<br><b>Rank: </b>", data2$RANK, "<br><b>Group: </b>", data2$TYPE)) %>%
         #plotly::config(displayModeBar = FALSE) %>% 
         plotly::layout(xaxis = list(fixedrange = FALSE, title = NA), 
-                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = "%"))
+                       yaxis = list(fixedrange = FALSE, title = NA, tickformat = ".0%"))
     )
     
     
