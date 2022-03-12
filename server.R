@@ -395,7 +395,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     state = unique(x$StateAb[x$DivisionNm==click$id & x$YEAR==input$hor_year])
@@ -444,7 +445,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     list(
@@ -596,6 +598,11 @@ function(input, output, session) {
     
     click = input$leafletplot_shape_click
     
+    if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
+    }
+    
     shiny::validate(
       shiny::need(!is.null(click$id), message = FALSE)
     )
@@ -660,7 +667,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -704,10 +712,10 @@ function(input, output, session) {
                                     shiny::tags$p(shiny::HTML(paste0("The left boxplot shows the median age across all the electorates. Each dark point in the boxplots represent where <strong>", click$id, "</strong> sits relative to the other electorates.")), style = "text-align: justify;"),
                                     shiny::tags$p(shiny::HTML(paste0("The right boxplot shows the breakdown of the population into discrete age groups and how this compares to other electorates.")), style = "text-align: justify;"),
                       ),
-                      shiny::column(width = 2, offset = 1,
+                      shiny::column(width = 3, offset = 1,
                                     plotly::plotlyOutput("demo_age", height = "400px")
                       ),
-                      shiny::column(width = 5, offset = 1,
+                      shiny::column(width = 5, offset = 0,
                                     plotly::plotlyOutput("demo_age2", height = "400px")
                       )
       ),
@@ -777,7 +785,7 @@ function(input, output, session) {
                                     shiny::tags$p(shiny::HTML(paste0("<b><em>Population density</em></b> is defined as the population of the electorate divided by the area of the electorate (people/km<sup>2</sup>).")), style = "text-align: justify; font-size: 8pt;")
                                     
                       ),
-                      shiny::column(width = 4, offset = 1,
+                      shiny::column(width = 7, offset = 1,
                                     plotly::plotlyOutput("demo_pop", height = "450px")
                       )
       ),
@@ -819,7 +827,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -917,7 +926,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     data = abs %>% 
@@ -1015,7 +1025,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1076,7 +1087,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1136,7 +1148,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1197,7 +1210,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1256,7 +1270,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1320,7 +1335,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1384,7 +1400,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
@@ -1449,7 +1466,8 @@ function(input, output, session) {
     click = input$leafletplot_shape_click
     
     if (!click$id %in% x$DivisionNm[x$YEAR==input$hor_year]) {
-      click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      #click$id = x$DivisionNm[x$YEAR==input$hor_year][1]
+      return(NULL)
     }
     
     
