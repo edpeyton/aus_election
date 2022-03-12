@@ -169,24 +169,24 @@ function(input, output, session) {
                       shiny::br(),
                       shiny::renderUI({
                         
-                        tab = tab %>% 
+                        tab2 = tab %>% 
                           dplyr::filter(YEAR == input$hor_year) %>% 
                           dplyr::select(Role, PartyNm, PartyAb, Seats, SeatsP, Votes, VotesP) %>% 
                           dplyr::arrange(Role, dplyr::desc(Seats), dplyr::desc(Votes)) %>%
                           dplyr::mutate(Seats = scales::comma(Seats, 1))
                         
                         if (input$hor_year==2010) {
-                          tab$Seats[tab$PartyAb=="ALP"] = paste0(tab$Seats[tab$PartyAb=="ALP"], "<sup>2</sup>")
+                          tab2$Seats[tab2$PartyAb=="ALP"] = paste0(tab2$Seats[tab2$PartyAb=="ALP"], "<sup>2</sup>")
                         }
-                        names(tab) = c("", "Party", " ", "Seats", "  ", "Votes<sup>1</sup>", "   ")
+                        names(tab2) = c("", "Party", " ", "Seats", "  ", "Votes<sup>1</sup>", "   ")
                         
                         cap = paste0("<sup>1</sup> First preference votes.", ifelse(input$hor_year==2010, "<br><sup>2</sup> Greens MP Adam Bandt and independent MPs Andrew Wilkie, Rob Oakeshott and Tony Windsor declared their support for Labor on confidence and supply. This gave the required 76 seats to form a majority government.", ""))
                         
-                        tab_out = knitr::kable(tab, format = "html", escape = FALSE, align = c("l", "l", "c", "r", "r", "r", "r")) %>%
+                        tab_out = knitr::kable(tab2, format = "html", escape = FALSE, align = c("l", "l", "c", "r", "r", "r", "r")) %>%
                           kableExtra::column_spec(c(1, 2, 3), bold = TRUE) 
                         
-                        for (i in 1:dim(tab)[1]) {
-                          tab_out = tab_out %>% kableExtra::row_spec(i, color = party_cols(tab$Party[i]))
+                        for (i in 1:dim(tab2)[1]) {
+                          tab_out = tab_out %>% kableExtra::row_spec(i, color = party_cols(tab2$Party[i]))
                         }
                         
                         tab_out = tab_out %>%
@@ -213,33 +213,7 @@ function(input, output, session) {
                       shiny::h4(shiny::code("Seats won", style = "color: #152238")),
                       shiny::p("The total seats won in the election by each party, grouped by their role in Parliament."),
                       plotly::renderPlotly({
-                        
-                        names(tab) = c("1", "Party", "Seats", "Percentage", "Votes*", "2", "YEAR", "Role")
-                        
-                        plotly::ggplotly(
-                          ggplot2::ggplot(data = tab %>% dplyr::filter(YEAR == input$hor_year)) +
-                            ggplot2::geom_bar(ggplot2::aes(x = Role, y = Seats, fill = Party), position = "stack", stat = "identity", show.legend = FALSE, color = "white") +
-                            ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
-                                           panel.grid.minor = ggplot2::element_blank(),
-                                           panel.border = ggplot2::element_blank(),
-                                           panel.background = ggplot2::element_blank(),
-                                           axis.title.x = ggplot2::element_blank(),
-                                           axis.text.y = ggplot2::element_blank(),
-                                           axis.ticks.y = ggplot2::element_blank(),
-                                           axis.ticks.x = ggplot2::element_blank(),
-                                           legend.position = 'none') +
-                            ggplot2::scale_fill_manual(values = elec_pal(tab$Party)) +
-                            ggplot2::labs(x = NULL,
-                                          title = NULL,
-                                          subtitle = NULL,
-                                          y = NULL) +
-                            ggplot2::geom_hline(yintercept = 75.5, linetype = "dashed", color = "grey", size = 0.5)
-                          
-                          , tooltip = c("Party", "Seats")) %>% 
-                          plotly::config(displayModeBar = FALSE) %>%
-                          plotly::layout(xaxis = list(fixedrange = TRUE), yaxis = list(fixedrange = TRUE))
-                        
-                        
+                        readRDS(paste0("data/seatswon", input$hor_year, ".rds"))
                       })
         ),
         shiny::column(width = 4, offset = 0,
