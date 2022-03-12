@@ -7,7 +7,7 @@
 
 The contents of this repository is a Shiny application that visualizes Australian election data.
 
-It is currently hosted at <a href="votedata.info" target="_blank">votedata.info</a>.
+It is currently hosted at <a href="https://votedata.info" target="_blank">votedata.info</a>.
 
 ******
 
