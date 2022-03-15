@@ -23,7 +23,7 @@ elec_pal2 = function(names) {
            "REAS" = "#008080",
            "UAPP" = "#FFA500",
            "ON" = "#FFEE33",
-           "PUP" = "#FFFF44",
+           "PUP" = "#dbdb04",
            "CEC" = "#A9A9A9",
            "RUA" = "#A9A9A9",
            "FUT" = "#A9A9A9",
@@ -149,7 +149,7 @@ party_cols = function(v) {
       } else if (x %in% c("Country Liberals (NT)")) {
         col = "#FFA500"
       } else if (x %in% c("United Australia Party", "Palmer United Party")) {
-        col = "#FFFF44"
+        col = "#dbdb04"
       } else if (x %in% c("Pauline Hanson's One Nation")) {
         col = "#FFEE33"
       }

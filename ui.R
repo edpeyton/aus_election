@@ -24,7 +24,7 @@ shiny::fluidPage(
   shiny::br(),
   shiny::fluidRow(
     shiny::column(width = 5, offset = 1, 
-                  shiny::tags$p(shiny::HTML(paste0("Australian Federal Elections are triannual (occuring every 3 years) 
+                  shiny::tags$p(shiny::HTML(paste0("Australian Federal Elections are triennial 
                                                    events which form the foundation of the democratic society in which we live. Arguably, 
                                                    it is your most important contribution to how the country functions. <strong><em>But how 
                                                    informed are you when it comes to elections?</strong></em>")), style = "text-align: justify;"),
